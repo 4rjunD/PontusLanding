@@ -97,7 +97,7 @@ export function FeaturesCreditCardShowcase() {
                   transition={{
                     repeat: Infinity,
                     duration: 3,
-                    ease: 'linear',
+                    ease: 'linear' as const,
                   }}
                 />
                 

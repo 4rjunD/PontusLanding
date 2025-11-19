@@ -19,10 +19,10 @@ export function BorderTrail({
   onAnimationComplete,
   style,
 }: BorderTrailProps) {
-  const BASE_TRANSITION = {
+  const BASE_TRANSITION: Transition = {
     repeat: Infinity,
     duration: 5,
-    ease: 'linear',
+    ease: 'linear' as const,
   };
 
   return (
@@ -39,7 +39,7 @@ export function BorderTrail({
         }}
         transition={{
           ...(transition ?? BASE_TRANSITION),
-          delay: delay,
+          ...(delay !== undefined && { delay }),
         }}
         onAnimationComplete={onAnimationComplete}
       />

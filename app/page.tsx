@@ -6,6 +6,7 @@ import { Header } from "@/components/ui/header";
 import { Features } from "@/components/blocks/features-8";
 import ComparisonTable from "@/components/ui/comparison-table";
 import { Timeline } from "@/components/ui/timeline";
+import { FeaturesCreditCardShowcase } from "@/components/ui/features-credit-card-showcase";
 import { Footer } from "@/components/ui/hover-footer";
 
 export default function Home() {
@@ -159,6 +160,9 @@ export default function Home() {
             },
           ]}
         />
+      </section>
+      <section id="showcase" className="bg-black">
+        <FeaturesCreditCardShowcase />
       </section>
       <Footer />
       </main>

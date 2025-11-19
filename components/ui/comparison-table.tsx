@@ -106,7 +106,9 @@ export default function ComparisonTable() {
                 </TableRow>
               </TableHeader>
               <TableBody>
-                {filteredData.map((item) => (
+                {filteredData.map((item) => {
+                  const isPontusRoute = item.name === "Pontus Route"
+                  return (
                   <TableRow
                     key={item.id}
                     className={cn(
@@ -114,12 +116,30 @@ export default function ComparisonTable() {
                       selected.includes(item.id) && "bg-white/5"
                     )}
                   >
-                    <TableCell className="p-3 text-white font-medium">{item.name}</TableCell>
-                    <TableCell className="p-3 text-gray-400">{item.type}</TableCell>
-                    <TableCell className="p-3 text-white">{item.fee}</TableCell>
-                    <TableCell className="p-3 text-gray-400">{item.speed}</TableCell>
-                    <TableCell className="p-3 text-white">{item.reliability}/5.0</TableCell>
-                    <TableCell className="p-3 text-gray-400">{item.coverage}</TableCell>
+                    <TableCell className={cn(
+                      "p-3 font-medium",
+                      isPontusRoute ? "text-[#4169E1]" : "text-white"
+                    )}>{item.name}</TableCell>
+                    <TableCell className={cn(
+                      "p-3",
+                      isPontusRoute ? "text-[#5B7FE8]" : "text-gray-400"
+                    )}>{item.type}</TableCell>
+                    <TableCell className={cn(
+                      "p-3",
+                      isPontusRoute ? "text-[#4169E1] font-medium" : "text-white"
+                    )}>{item.fee}</TableCell>
+                    <TableCell className={cn(
+                      "p-3",
+                      isPontusRoute ? "text-[#5B7FE8]" : "text-gray-400"
+                    )}>{item.speed}</TableCell>
+                    <TableCell className={cn(
+                      "p-3",
+                      isPontusRoute ? "text-[#4169E1] font-medium" : "text-white"
+                    )}>{item.reliability}/5.0</TableCell>
+                    <TableCell className={cn(
+                      "p-3",
+                      isPontusRoute ? "text-[#5B7FE8]" : "text-gray-400"
+                    )}>{item.coverage}</TableCell>
                     <TableCell className="p-3">
                       <Button
                         variant={selected.includes(item.id) ? "destructive" : "outline"}
@@ -131,7 +151,8 @@ export default function ComparisonTable() {
                       </Button>
                     </TableCell>
                   </TableRow>
-                ))}
+                  )
+                })}
               </TableBody>
             </Table>
           </div>

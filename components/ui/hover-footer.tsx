@@ -48,12 +48,13 @@ export const TextHoverEffect = ({
       ref={svgRef}
       width="100%"
       height="100%"
-      viewBox="0 0 300 100"
+      viewBox="0 0 600 100"
       xmlns="http://www.w3.org/2000/svg"
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
       onMouseMove={(e) => setCursor({ x: e.clientX, y: e.clientY })}
       className={cn("select-none uppercase cursor-pointer", className)}
+      preserveAspectRatio="xMidYMid meet"
     >
       <defs>
         <linearGradient
@@ -101,7 +102,8 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.3"
-        className="fill-transparent stroke-neutral-200 font-[helvetica] text-7xl font-bold dark:stroke-neutral-800"
+        fontSize="120"
+        className="fill-transparent stroke-neutral-200 font-[helvetica] font-bold dark:stroke-neutral-800"
         style={{ opacity: hovered ? 0.7 : 0 }}
       >
         {text}
@@ -112,7 +114,8 @@ export const TextHoverEffect = ({
         textAnchor="middle"
         dominantBaseline="middle"
         strokeWidth="0.3"
-        className="fill-transparent stroke-white font-[helvetica] text-7xl font-bold 
+        fontSize="120"
+        className="fill-transparent stroke-white font-[helvetica] font-bold 
         dark:stroke-white"
         initial={{ strokeDashoffset: 1000, strokeDasharray: 1000 }}
         animate={{
@@ -133,8 +136,9 @@ export const TextHoverEffect = ({
         dominantBaseline="middle"
         stroke={`url(#textGradient-${uniqueId})`}
         strokeWidth="0.3"
+        fontSize="120"
         mask={`url(#textMask-${uniqueId})`}
-        className="fill-transparent font-[helvetica] text-7xl font-bold"
+        className="fill-transparent font-[helvetica] font-bold"
       >
         {text}
       </text>
@@ -201,7 +205,7 @@ export function Footer() {
       <div className="relative z-10 container mx-auto px-4 py-16 lg:py-24">
         <div className="flex flex-col items-center justify-center space-y-8">
           {/* Animated Pontus Text */}
-          <div className="w-full max-w-4xl h-32">
+          <div className="w-full h-32 md:h-40">
             <Link href="#hero" onClick={(e) => handleLinkClick(e, '#hero')}>
               <TextHoverEffect text="PONTUS" isVisible={isVisible} />
             </Link>

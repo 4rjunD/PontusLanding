@@ -147,4 +147,3 @@ export {
   SelectTrigger,
   SelectValue,
 };
-// Fixed icon props

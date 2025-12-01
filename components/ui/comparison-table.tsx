@@ -118,27 +118,27 @@ export default function ComparisonTable() {
                   >
                     <TableCell className={cn(
                       "p-3 font-medium",
-                      isPontusRoute ? "text-[#4169E1]" : "text-white"
+                      isPontusRoute ? "text-[#22c55e]" : "text-white"
                     )}>{item.name}</TableCell>
                     <TableCell className={cn(
                       "p-3",
-                      isPontusRoute ? "text-[#5B7FE8]" : "text-gray-400"
+                      isPontusRoute ? "text-[#4ade80]" : "text-gray-400"
                     )}>{item.type}</TableCell>
                     <TableCell className={cn(
                       "p-3",
-                      isPontusRoute ? "text-[#4169E1] font-medium" : "text-white"
+                      isPontusRoute ? "text-[#22c55e] font-medium" : "text-white"
                     )}>{item.fee}</TableCell>
                     <TableCell className={cn(
                       "p-3",
-                      isPontusRoute ? "text-[#5B7FE8]" : "text-gray-400"
+                      isPontusRoute ? "text-[#4ade80]" : "text-gray-400"
                     )}>{item.speed}</TableCell>
                     <TableCell className={cn(
                       "p-3",
-                      isPontusRoute ? "text-[#4169E1] font-medium" : "text-white"
+                      isPontusRoute ? "text-[#22c55e] font-medium" : "text-white"
                     )}>{item.reliability}/5.0</TableCell>
                     <TableCell className={cn(
                       "p-3",
-                      isPontusRoute ? "text-[#5B7FE8]" : "text-gray-400"
+                      isPontusRoute ? "text-[#4ade80]" : "text-gray-400"
                     )}>{item.coverage}</TableCell>
                     <TableCell className="p-3">
                       <Button

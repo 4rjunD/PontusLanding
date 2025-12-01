@@ -28,8 +28,8 @@ export function Hero({
       id="hero"
       className="relative mx-auto w-full pt-40 px-6 text-center md:px-8 
       min-h-[calc(100vh-40px)] overflow-hidden 
-      bg-[linear-gradient(to_bottom,#fff,#ffffff_50%,#e8e8e8_88%)]  
-      dark:bg-[linear-gradient(to_bottom,#000,#0000_30%,#898e8e_78%,#ffffff_99%_50%)] 
+      bg-[linear-gradient(to_bottom,#f0fdf4,#ffffff_50%,#dcfce7_88%)]  
+      dark:bg-[linear-gradient(to_bottom,#000,#0000_30%,#14532d_78%,#22c55e_99%_50%)] 
       rounded-b-xl"
     >
       {/* Grid BG */}
@@ -45,7 +45,7 @@ export function Hero({
       <div
         className="absolute left-1/2 top-[calc(100%-90px)] lg:top-[calc(100%-150px)] 
         h-[500px] w-[700px] md:h-[500px] md:w-[1100px] lg:h-[750px] lg:w-[140%] 
-        -translate-x-1/2 rounded-[100%] border-[#B48CDE] bg-white dark:bg-black 
+        -translate-x-1/2 rounded-[100%] border-[#22c55e] bg-white dark:bg-black 
         bg-[radial-gradient(closest-side,#fff_82%,#000000)] 
         dark:bg-[radial-gradient(closest-side,#000_82%,#ffffff)] 
         animate-fade-up"
@@ -58,6 +58,21 @@ export function Hero({
           className="group"
           target={eyebrowHref?.startsWith('http') ? '_blank' : undefined}
           rel={eyebrowHref?.startsWith('http') ? 'noopener noreferrer' : undefined}
+          onClick={(e) => {
+            if (eyebrowHref?.startsWith('#')) {
+              e.preventDefault();
+              const element = document.querySelector(eyebrowHref);
+              if (element) {
+                const headerHeight = 80;
+                const elementPosition = element.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerHeight;
+                window.scrollTo({
+                  top: offsetPosition,
+                  behavior: 'smooth'
+                });
+              }
+            }
+          }}
         >
           <span
             className="text-sm text-gray-600 dark:text-gray-400 font-geist mx-auto px-5 py-2 
@@ -97,7 +112,7 @@ export function Hero({
           {onCtaClick ? (
             <Button
               onClick={onCtaClick}
-              className="mt-[-20px] w-fit md:w-52 z-20 font-geist tracking-tighter text-center text-lg"
+              className="mt-[-20px] w-fit md:w-52 z-20 font-geist tracking-tighter text-center text-lg bg-white text-black hover:bg-gray-100 hover:text-black"
             >
               <TextShimmer className="text-lg font-semibold">
                 {ctaLabel}
@@ -106,7 +121,7 @@ export function Hero({
           ) : (
             <Button
               asChild
-              className="mt-[-20px] w-fit md:w-52 z-20 font-geist tracking-tighter text-center text-lg"
+              className="mt-[-20px] w-fit md:w-52 z-20 font-geist tracking-tighter text-center text-lg bg-white text-black hover:bg-gray-100 hover:text-black"
             >
               <a 
                 href={ctaHref}

@@ -27,12 +27,6 @@ export default function Home() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const handleExploreClick = () => {
-    const compareSection = document.getElementById('compare');
-    if (compareSection) {
-      compareSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
 
   return (
     <main className="min-h-screen bg-black">
@@ -40,12 +34,11 @@ export default function Home() {
       <section id="hero">
         <Hero
           eyebrow="AI PAYMENT ROUTING"
-          eyebrowHref="https://cal.com/arjun-dixit-0nwkzi/30min"
+          eyebrowHref="#compare"
           title="The Cheapest Way to Send Money"
           subtitle="Compare rates across all payment routes. Our AI uses machine learning and real-time optimization to analyze every available payment rail and automatically find the cheapest, fastest, and most reliable path for your international transfers."
-          ctaLabel="Explore Routes"
-          ctaHref="#compare"
-          onCtaClick={handleExploreClick}
+          ctaLabel="Book a Demo"
+          ctaHref="https://cal.com/arjun-dixit-0nwkzi/30min"
         />
       </section>
       <section id="features" className="bg-black">

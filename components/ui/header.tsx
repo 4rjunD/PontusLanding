@@ -88,14 +88,14 @@ function Header() {
                     </Link>
                 </div>
                 <div className="flex justify-end w-full gap-4">
-                    <Button variant="outline" asChild>
+                    <Button variant="outline" asChild className="bg-white text-black border-white hover:bg-gray-100 hover:text-black">
                         <a href="https://form.typeform.com/to/rtxDJzOL" target="_blank" rel="noopener noreferrer">
-                            Get Early Access
+                            Get Full Early Access
                         </a>
                     </Button>
-                    <Button asChild>
-                        <a href="https://cal.com/arjun-dixit-0nwkzi/30min" target="_blank" rel="noopener noreferrer">
-                            Book a Demo
+                    <Button asChild className="bg-white text-black hover:bg-gray-100 hover:text-black">
+                        <a href="https://form.typeform.com/to/rtxDJzOL" target="_blank" rel="noopener noreferrer">
+                            Sign up for Beta
                         </a>
                     </Button>
                 </div>
@@ -118,14 +118,14 @@ function Header() {
                                 </div>
                             ))}
                             <div className="pt-4 border-t flex flex-col gap-2">
-                                <Button variant="outline" asChild className="w-full">
+                                <Button variant="outline" asChild className="w-full bg-white text-black border-white hover:bg-gray-100 hover:text-black">
                                     <a href="https://form.typeform.com/to/rtxDJzOL" target="_blank" rel="noopener noreferrer">
-                                        Get Early Access
+                                        Get Full Early Access
                                     </a>
                                 </Button>
-                                <Button asChild className="w-full">
-                                    <a href="https://cal.com/arjun-dixit-0nwkzi/30min" target="_blank" rel="noopener noreferrer">
-                                        Book a Demo
+                                <Button asChild className="w-full bg-white text-black hover:bg-gray-100 hover:text-black">
+                                    <a href="https://form.typeform.com/to/rtxDJzOL" target="_blank" rel="noopener noreferrer">
+                                        Sign up for Beta
                                     </a>
                                 </Button>
                             </div>
